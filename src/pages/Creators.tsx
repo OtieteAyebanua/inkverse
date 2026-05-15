@@ -143,10 +143,10 @@ export const Creators = () => {
   return (
     <div className="min-h-screen bg-[#080808] font-['Comic_Sans_MS']">
       {/* Hero Section */}
-      <div className="relative border-b border-white/5 px-[52px] py-16 overflow-hidden">
+      <div className="relative border-b border-white/5 px-6 md:px-[52px] py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/6 via-transparent to-transparent" />
         
-        <div className="relative z-10 grid grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Left Content */}
           <div>
             <div className="flex items-center gap-2 mb-4.5">
@@ -162,12 +162,12 @@ export const Creators = () => {
               InkVerse is built for indie comic creators. Upload your work, grow your audience, and earn a transparent share of subscription revenue — with no gatekeepers.
             </p>
 
-            <div className="flex items-center gap-2.5">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors flex items-center justify-center gap-2">
                 <PenTool size={14} />
                 Apply to publish
               </button>
-              <button className="bg-white/5 hover:bg-white/8 border border-white/8 text-white/60 px-5 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors">
+              <button className="bg-white/5 hover:bg-white/8 border border-white/8 text-white/60 px-5 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors text-center">
                 Learn more
               </button>
             </div>
@@ -194,9 +194,9 @@ export const Creators = () => {
       </div>
 
       {/* Stats Strip */}
-      <div className="border-y border-white/5 grid grid-cols-4 divide-x divide-white/5">
+      <div className="border-y border-white/5 grid grid-cols-2 md:grid-cols-4 md:divide-x divide-white/5 py-4 md:py-0">
         {stats.map((stat) => (
-          <div key={stat.label} className="px-[52px] py-6">
+          <div key={stat.label} className="px-6 md:px-[52px] py-2 md:py-6 text-center md:text-left">
             <div className="text-3xl font-black text-white font-['Comic_Sans_MS'] tracking-tight mb-1">
               {stat.value}
             </div>
@@ -206,15 +206,15 @@ export const Creators = () => {
       </div>
 
       {/* How It Works */}
-      <div className="border-b border-white/5 px-[52px] py-14">
+      <div className="border-b border-white/5 px-6 md:px-[52px] py-10 md:py-14">
         <div className="flex items-center gap-2.5 mb-8">
           <div className="w-3.5 h-px bg-blue-500" />
           <span className="text-xs font-bold letter-spacing-wider uppercase text-white">How it works</span>
         </div>
 
-        <div className="grid grid-cols-4 gap-px bg-white/4 rounded-lg overflow-hidden border border-white/4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/4 rounded-lg overflow-hidden border border-white/4">
           {steps.map((step, idx) => (
-            <div key={step.num} className="bg-[#080808] p-7 relative">
+            <div key={step.num} className="bg-[#080808] p-6 lg:p-7 relative">
               <div className="text-5xl font-black text-blue-500/15 font-['Comic_Sans_MS'] letter-spacing-tight mb-3 leading-none">
                 {step.num}
               </div>
@@ -222,7 +222,7 @@ export const Creators = () => {
               <p className="text-xs text-white/35 leading-relaxed font-light">{step.desc}</p>
 
               {idx < 3 && (
-                <div className="absolute top-7 -right-1 w-6 h-6 flex items-center justify-center bg-[#080808] z-10">
+                <div className="hidden lg:flex absolute top-7 -right-1 w-6 h-6 items-center justify-center bg-[#080808] z-10">
                   <ArrowRight size={13} className="text-white/15" />
                 </div>
               )}
@@ -232,7 +232,7 @@ export const Creators = () => {
       </div>
 
       {/* Featured Creator Carousel */}
-      <div className="border-b border-white/5 px-[52px] py-12">
+      <div className="border-b border-white/5 px-6 md:px-[52px] py-10 md:py-12">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2.5">
             <div className="w-3.5 h-px bg-blue-500" />
@@ -254,9 +254,9 @@ export const Creators = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-[380px_1fr] gap-0 bg-[#0c0c0c] border border-white/6 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-0 bg-[#0c0c0c] border border-white/6 rounded-2xl overflow-hidden">
           {/* Left */}
-          <div className="p-8 border-r border-white/4 flex flex-col justify-between">
+          <div className="p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-white/4 flex flex-col justify-between gap-6 lg:gap-0">
             <div>
               <div className="flex items-center gap-3.5 mb-5">
                 <div className={`w-14 h-14 rounded-full flex items-center justify-center font-['Comic_Sans_MS'] font-black text-lg border border-current/20 ${featured.avatarColor}`}>
@@ -331,7 +331,7 @@ export const Creators = () => {
 
             <div className="bg-[#0a0a0a] border border-white/5 rounded-lg p-5">
               <div className="text-xs text-white/25 letter-spacing-wide uppercase mb-3.5 font-medium">Creator stats</div>
-              <div className="flex gap-6">
+              <div className="flex gap-4 md:gap-6">
                 <div>
                   <div className="text-2xl font-black text-blue-500 font-['Comic_Sans_MS']">{featured.stats[0].val}</div>
                   <div className="text-xs text-white/25 letter-spacing-wide uppercase mt-1">{featured.stats[0].label}</div>
@@ -351,13 +351,13 @@ export const Creators = () => {
       </div>
 
       {/* Revenue Model */}
-      <div className="border-b border-white/5 bg-[#060606] px-[52px] py-12">
+      <div className="border-b border-white/5 bg-[#060606] px-6 md:px-[52px] py-10 md:py-12">
         <div className="flex items-center gap-2.5 mb-8">
           <div className="w-3.5 h-px bg-blue-500" />
           <span className="text-xs font-bold letter-spacing-wider uppercase text-white">How revenue works</span>
         </div>
 
-        <div className="grid grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div>
             <h2 className="text-3xl font-black text-white font-['Comic_Sans_MS'] mb-2.5">Transparent by design.</h2>
             <p className="text-sm text-white/38 leading-relaxed font-light mb-6">
@@ -406,13 +406,13 @@ export const Creators = () => {
       </div>
 
       {/* Creator Grid */}
-      <div className="px-[52px] py-12">
-        <div className="flex items-center justify-between mb-6">
+      <div className="px-6 md:px-[52px] py-10 md:py-12">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-0 mb-6">
           <div className="flex items-center gap-2.5">
             <div className="w-3.5 h-px bg-blue-500" />
             <span className="text-xs font-bold letter-spacing-wider uppercase text-white">Meet the creators</span>
           </div>
-          <div className="flex items-center bg-[#0d0d0d] border border-white/7 rounded-lg overflow-hidden w-56">
+          <div className="flex items-center bg-[#0d0d0d] border border-white/7 rounded-lg overflow-hidden w-full sm:w-56">
             <Search size={14} className="text-white/22 ml-2.5" />
             <input
               type="text"
@@ -424,11 +424,11 @@ export const Creators = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
           {creators.map((creator) => (
-            <div key={creator.name} className="bg-[#0c0c0c] border border-white/6 rounded-xl p-5.5 hover:border-blue-500/20 transition-colors cursor-pointer">
+            <div key={creator.name} className="bg-[#0c0c0c] border border-white/6 rounded-xl p-5.5 hover:border-blue-500/20 transition-colors cursor-pointer flex flex-col">
               <div className="flex items-center gap-3 mb-3.5">
-              <div className="w-11 h-11 rounded-full ${creator.avatarColor} flex items-center justify-center font-['Comic_Sans_MS'] font-black text-sm border border-current/20">
+              <div className={`w-11 h-11 rounded-full ${creator.avatarColor} flex items-center justify-center font-['Comic_Sans_MS'] font-black text-sm border border-current/20`}>
                   {creator.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -462,7 +462,7 @@ export const Creators = () => {
       </div>
 
       {/* Join Banner */}
-      <div className="relative mx-[52px] mb-12 bg-[#080f1c] border border-blue-500/12 rounded-2xl p-10 flex items-center justify-between gap-8 overflow-hidden">
+      <div className="relative mx-6 md:mx-[52px] mb-12 bg-[#080f1c] border border-blue-500/12 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 overflow-hidden">
         <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-gradient-to-b from-blue-500/8 to-transparent" />
         
         <div className="relative z-10">
@@ -470,17 +470,17 @@ export const Creators = () => {
             <div className="w-3.5 h-px bg-blue-500" />
             <span className="text-xs font-medium letter-spacing-wide uppercase text-blue-500">Ready to publish?</span>
           </div>
-          <h2 className="text-2xl font-black text-white font-['Comic_Sans_MS'] tracking-tight mb-2">Your first chapter is waiting.</h2>
+          <h2 className="text-2xl font-black text-white font-['Comic_Sans_MS'] tracking-tight mb-2 text-balance">Your first chapter is waiting.</h2>
           <p className="text-sm text-white/35 font-light leading-relaxed max-w-md">
             Join 840+ creators already building their audience on InkVerse. Free to join, fair revenue share, and a platform that actually cares about your craft.
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5 flex-shrink-0 relative z-10">
-          <button className="bg-white/5 border border-white/8 text-white/50 hover:bg-white/8 px-6 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 flex-shrink-0 relative z-10 w-full md:w-auto">
+          <button className="bg-white/5 border border-white/8 text-white/50 hover:bg-white/8 px-6 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors text-center w-full sm:w-auto">
             Read the FAQ
           </button>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-sm font-medium font-['Comic_Sans_MS'] transition-colors text-center w-full sm:w-auto">
             Apply to publish
           </button>
         </div>

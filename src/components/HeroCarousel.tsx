@@ -91,16 +91,34 @@ export const HeroCarousel = () => {
       {carouselData.map((item, index) => (
         <div 
           key={item.id} 
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100 z-0' : 'opacity-0 -z-10'}`}
-          style={{
-            backgroundImage: `url('${item.bgImage}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out overflow-hidden ${index === currentIndex ? 'opacity-100 z-0' : 'opacity-0 -z-10'}`}
         >
-          {/* Gradient Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+          {/* Blurred Background to fill space without pixelation */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url('${item.bgImage}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'blur(40px) brightness(0.3)',
+              transform: 'scale(1.2)',
+            }}
+          />
+          
+          {/* Crisp, contained image aligned to the right */}
+          <div 
+            className="absolute inset-0 w-full h-full"
+            style={{
+              backgroundImage: `url('${item.bgImage}')`,
+              backgroundSize: 'contain',
+              backgroundPosition: 'right center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+
+          {/* Gradient Overlays for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/80 md:via-[#080808]/60 to-transparent w-full md:w-[80%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/80 to-transparent sm:hidden" />
         </div>
       ))}
 
