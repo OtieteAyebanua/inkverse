@@ -1,4 +1,4 @@
-const MANGADEX_API = 'https://api.mangadex.org';
+const MANGADEX_API = '/api/mangadex';
 
 export interface MangaDexManga {
   id: string;
@@ -119,7 +119,7 @@ export const getMangaCoverUrl = (manga: MangaDexManga, size: 'small' | 'medium' 
     };
     
     // Keep the original filename extension and append .{size}.jpg
-    return `https://uploads.mangadex.org/covers/${manga.id}/${filename}.${sizes[size]}.jpg`;
+    return `/uploads/mangadex/covers/${manga.id}/${filename}.${sizes[size]}.jpg`;
   } catch (error) {
     return null;
   }
