@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { PenTool, DollarSign, Calendar, BarChart3, Eye, ArrowRight, Star, Search, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const perks = [

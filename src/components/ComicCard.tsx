@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Play } from 'lucide-react';
 
@@ -43,7 +42,7 @@ export const ComicCard = ({ id = 1, title, chapter, genre, badge, bgColor }: Com
       {/* Hover Play Button */}
       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px] z-20">
         <div className="w-10 sm:w-[46px] h-10 sm:h-[46px] rounded-full bg-[#3b82f6] text-white flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] translate-y-3 sm:translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-           <Play size={16} className="sm:w-[18px] sm:h-[18px]" fill="currentColor" className="ml-0.5 sm:ml-1" />
+           <Play size={16} className="sm:w-[18px] sm:h-[18px]" fill="currentColor"/>
         </div>
       </div>
 

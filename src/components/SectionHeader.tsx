@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const SectionHeader = ({ title, linkText, linkHref = "#" }: { title: string; linkText: string; linkHref?: string }) => (
   <div className="flex justify-between items-center mb-5">
     <div className="flex items-center gap-2.5">

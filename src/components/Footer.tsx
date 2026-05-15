@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Footer = () => (
   <footer className="px-4 sm:px-6 md:px-8 lg:px-[52px] py-4 sm:py-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 sm:gap-4 bg-[#080808]">
     <div className="font-['Comic_Sans_MS'] text-sm sm:text-base lg:text-[16px] font-800 text-white/25">
